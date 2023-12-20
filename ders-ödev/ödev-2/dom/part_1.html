@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödev 1</title>
+</head>
+<body>
+    <label for="price">Price: </label>
+    <input type="text" id="price" name="price">
+    <button onclick="handleClick()">Sonuc</button>
+
+    <script>
+        function handleClick() {
+            const input = document.getElementById("price").value;
+            const result = parseFloat(input);
+            if (isNaN(result)) {
+                alert("Bu değer geçersiz!");
+                return;
+            }
+
+            alert(result * 1.8);
+        }
+    </script>
+</body>
+</html>
