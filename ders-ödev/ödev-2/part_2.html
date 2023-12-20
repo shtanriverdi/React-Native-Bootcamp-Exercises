@@ -28,12 +28,16 @@
     <hr>
     <h3 id="sonuc"></h3>
     <script>
+        function showError() {
+            alert("Geçerli bir sayı giriniz!");
+        }
+
         function handleClick(btnId) {
             const num1 = parseFloat(document.getElementById("num1").value);
             const num2 = parseFloat(document.getElementById("num2").value);
 
             if (isNaN(num1) || isNaN(num2)) {
-                alert("Geçerli bir sayı giriniz!");
+                showError();
                 return;
             }
 
@@ -45,6 +49,10 @@
                     alert((num1 + num2).toFixed(5));
                     break;
                 case "divide":
+                    if (isNaN((num1 / num2)) || !isFinite(num1 / num2)) {
+                        alert("Geçersiz bölme işlemi!");
+                        return;
+                    }
                     alert((num1 / num2).toFixed(5));
                     break;
                 case "substract":
